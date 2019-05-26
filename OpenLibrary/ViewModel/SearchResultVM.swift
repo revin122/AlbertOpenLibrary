@@ -11,6 +11,8 @@ import UIKit
 class SearchResultVM : SearchAPIDelegate {
     
     var page : Int
+    var typeOptions = ["All", "Author", "Title"]
+    
     var delegate : SearchResultVMDelegate?
     
     var currentSearchText : String = ""
@@ -21,9 +23,9 @@ class SearchResultVM : SearchAPIDelegate {
             delegate?.searchingDone()
         }
     }
-    var errorMessage : String? {
+    var showMessage : String? {
         didSet {
-            delegate?.errorFound()
+            delegate?.generatedMessage()
         }
     }
     
@@ -53,20 +55,44 @@ class SearchResultVM : SearchAPIDelegate {
         return searchResult?.numFound ?? 0
     }
     
-    func getItem(index : Int) -> SearchItemVM {
-        return SearchItemVM(searchItem: searchResult?.results[index])
+    func getItem(index : Int) -> DocItemVM {
+        
+        let docItem = searchResult?.results[index]
+        
+        let docItemVM = DocItemVM(docItem: docItem)
+        
+        //check if it exists in core data
+        for coreDataDocItem : DocItem in DocCoreDataSingleton.getInstance().docCoreDataItems {
+            if docItem?.key == coreDataDocItem.key {
+                docItemVM.isInCoreData = true
+                break
+            }
+        }
+        
+        return docItemVM
     }
     
-    func saveItemToCoreData(index : Int) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+    //both save and remove
+    func processToCoreData(docIndex : Int) {
+        //TODO a check if item already exists in coredata
+        let docItemVM = getItem(index: docIndex)
         
-        let entity = NSEntityDescription.entity(forEntityName: "Book", in: context)
-        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        if docItemVM.isInCoreData {
+            refreshedDocCoreDataSingleton(message: CoreDataHandler.getInstance().removeItem(docItem: docItemVM.docItem), removed: true)
+        } else {
+            refreshedDocCoreDataSingleton(message: CoreDataHandler.getInstance().saveItem(docItem: searchResult!.results[docIndex]), removed: false)
+        }
     }
     
-    func removeItemFromCoreData(index : Int) {
-        
+    private func refreshedDocCoreDataSingleton(message : String, removed : Bool) {
+        if message == "" {
+            DocCoreDataSingleton.getInstance().refresh()
+            
+            showMessage = "Item \(removed ? "Removed" : "Saved")"
+            delegate?.searchingDone()
+        } else {
+            showMessage = message
+        }
     }
     
     /*****
@@ -74,6 +100,8 @@ class SearchResultVM : SearchAPIDelegate {
      ****/
     
     func searchResults(searchResults : SearchResult) {
+        
+        //just add the previous results to this new array while keeping the other stuff intact
         if page > 1 {
             searchResults.addPreviousEntries(previousResults: searchResult?.results ?? [])
         }
@@ -84,7 +112,7 @@ class SearchResultVM : SearchAPIDelegate {
     func apiFailed(error: Error?) {
         //TODO Parse Error
         
-        errorMessage = "Could not complete process. Please try again later."
+        showMessage = "Could not complete process. Please try again later."
     }
     
     //End of Search API Delegate
@@ -93,5 +121,5 @@ class SearchResultVM : SearchAPIDelegate {
 
 protocol SearchResultVMDelegate {
     func searchingDone()
-    func errorFound()
+    func generatedMessage()
 }

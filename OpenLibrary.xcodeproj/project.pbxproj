@@ -13,16 +13,20 @@
 		110A7A782295C26C001C16A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110A7A762295C26C001C16A0 /* Main.storyboard */; };
 		110A7A7A2295C26E001C16A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110A7A792295C26E001C16A0 /* Assets.xcassets */; };
 		110A7A7D2295C26E001C16A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110A7A7B2295C26E001C16A0 /* LaunchScreen.storyboard */; };
-		110D13C12295D5A200BCF483 /* SearchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13C02295D5A200BCF483 /* SearchItemTableViewCell.swift */; };
+		110D13C12295D5A200BCF483 /* DocItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13C02295D5A200BCF483 /* DocItemTableViewCell.swift */; };
 		110D13C32295D77900BCF483 /* DoneKeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13C22295D77900BCF483 /* DoneKeyboardTextField.swift */; };
 		110D13C52295D81300BCF483 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13C42295D81300BCF483 /* PickerTextField.swift */; };
 		110D13C72295DD3F00BCF483 /* OpenLibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13C62295DD3F00BCF483 /* OpenLibraryAPI.swift */; };
 		110D13CA229701E900BCF483 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13C9229701E900BCF483 /* SearchResult.swift */; };
 		110D13CC2297020900BCF483 /* SearchResultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13CB2297020900BCF483 /* SearchResultVM.swift */; };
 		110D13CF229714B400BCF483 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13CE229714B400BCF483 /* UIViewController.swift */; };
-		110D13D122971AE400BCF483 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13D022971AE400BCF483 /* SearchItem.swift */; };
-		110D13D322974DD400BCF483 /* SearchItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13D222974DD300BCF483 /* SearchItemVM.swift */; };
+		110D13D122971AE400BCF483 /* DocItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13D022971AE400BCF483 /* DocItem.swift */; };
+		110D13D322974DD400BCF483 /* DocItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13D222974DD300BCF483 /* DocItemVM.swift */; };
 		110D13E62298BCB200BCF483 /* openlibrarycd.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 110D13E42298BCB200BCF483 /* openlibrarycd.xcdatamodeld */; };
+		110D13E92299A9BE00BCF483 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13E82299A9BE00BCF483 /* CoreDataHandler.swift */; };
+		110D13EE229A318700BCF483 /* DocItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110D13EC229A318600BCF483 /* DocItemTableViewCell.xib */; };
+		110D13F0229A4C2F00BCF483 /* CoreDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13EF229A4C2F00BCF483 /* CoreDataVM.swift */; };
+		110D13F2229A616E00BCF483 /* DocCoreDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13F1229A616E00BCF483 /* DocCoreDataSingleton.swift */; };
 		4E8EFD06D3CD7F4680401F2E /* Pods_OpenLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8932BCF854E22E2C058F01 /* Pods_OpenLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,16 +39,20 @@
 		110A7A792295C26E001C16A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		110A7A7C2295C26E001C16A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		110A7A7E2295C26E001C16A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		110D13C02295D5A200BCF483 /* SearchItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemTableViewCell.swift; sourceTree = "<group>"; };
+		110D13C02295D5A200BCF483 /* DocItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocItemTableViewCell.swift; sourceTree = "<group>"; };
 		110D13C22295D77900BCF483 /* DoneKeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneKeyboardTextField.swift; sourceTree = "<group>"; };
 		110D13C42295D81300BCF483 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		110D13C62295DD3F00BCF483 /* OpenLibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryAPI.swift; sourceTree = "<group>"; };
 		110D13C9229701E900BCF483 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		110D13CB2297020900BCF483 /* SearchResultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVM.swift; sourceTree = "<group>"; };
 		110D13CE229714B400BCF483 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		110D13D022971AE400BCF483 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
-		110D13D222974DD300BCF483 /* SearchItemVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemVM.swift; sourceTree = "<group>"; };
+		110D13D022971AE400BCF483 /* DocItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocItem.swift; sourceTree = "<group>"; };
+		110D13D222974DD300BCF483 /* DocItemVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocItemVM.swift; sourceTree = "<group>"; };
 		110D13E52298BCB200BCF483 /* openlibrarycd.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = openlibrarycd.xcdatamodel; sourceTree = "<group>"; };
+		110D13E82299A9BE00BCF483 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		110D13EC229A318600BCF483 /* DocItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocItemTableViewCell.xib; sourceTree = "<group>"; };
+		110D13EF229A4C2F00BCF483 /* CoreDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataVM.swift; sourceTree = "<group>"; };
+		110D13F1229A616E00BCF483 /* DocCoreDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocCoreDataSingleton.swift; sourceTree = "<group>"; };
 		2C8932BCF854E22E2C058F01 /* Pods_OpenLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B53158EF82B33E7FEA93E3 /* Pods-OpenLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLibrary.release.xcconfig"; path = "Target Support Files/Pods-OpenLibrary/Pods-OpenLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		FA11CBA25D1CC574E2BA8E07 /* Pods-OpenLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLibrary.debug.xcconfig"; path = "Target Support Files/Pods-OpenLibrary/Pods-OpenLibrary.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +91,8 @@
 		110A7A6F2295C26C001C16A0 /* OpenLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				110D13EA229A311400BCF483 /* XIB */,
+				110D13E72299A92000BCF483 /* CoreData */,
 				110D13CD2297141600BCF483 /* Extension */,
 				110D13C822966FEA00BCF483 /* Storyboard */,
 				110A7A872295CA8F001C16A0 /* Model */,
@@ -93,7 +103,6 @@
 				110A7A702295C26C001C16A0 /* AppDelegate.swift */,
 				110A7A792295C26E001C16A0 /* Assets.xcassets */,
 				110A7A7E2295C26E001C16A0 /* Info.plist */,
-				110D13E42298BCB200BCF483 /* openlibrarycd.xcdatamodeld */,
 			);
 			path = OpenLibrary;
 			sourceTree = "<group>";
@@ -119,7 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				110D13CB2297020900BCF483 /* SearchResultVM.swift */,
-				110D13D222974DD300BCF483 /* SearchItemVM.swift */,
+				110D13D222974DD300BCF483 /* DocItemVM.swift */,
+				110D13EF229A4C2F00BCF483 /* CoreDataVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -128,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				110D13C9229701E900BCF483 /* SearchResult.swift */,
-				110D13D022971AE400BCF483 /* SearchItem.swift */,
+				110D13D022971AE400BCF483 /* DocItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,7 +146,7 @@
 		110D13BF2295D57300BCF483 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				110D13C02295D5A200BCF483 /* SearchItemTableViewCell.swift */,
+				110D13C02295D5A200BCF483 /* DocItemTableViewCell.swift */,
 				110D13C22295D77900BCF483 /* DoneKeyboardTextField.swift */,
 				110D13C42295D81300BCF483 /* PickerTextField.swift */,
 			);
@@ -158,6 +168,24 @@
 				110D13CE229714B400BCF483 /* UIViewController.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		110D13E72299A92000BCF483 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				110D13E42298BCB200BCF483 /* openlibrarycd.xcdatamodeld */,
+				110D13E82299A9BE00BCF483 /* CoreDataHandler.swift */,
+				110D13F1229A616E00BCF483 /* DocCoreDataSingleton.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		110D13EA229A311400BCF483 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				110D13EC229A318600BCF483 /* DocItemTableViewCell.xib */,
+			);
+			path = XIB;
 			sourceTree = "<group>";
 		};
 		6837739E732797848575B1A7 /* Pods */ = {
@@ -238,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				110A7A7D2295C26E001C16A0 /* LaunchScreen.storyboard in Resources */,
+				110D13EE229A318700BCF483 /* DocItemTableViewCell.xib in Resources */,
 				110A7A7A2295C26E001C16A0 /* Assets.xcassets in Resources */,
 				110A7A782295C26C001C16A0 /* Main.storyboard in Resources */,
 			);
@@ -293,15 +322,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				110D13C72295DD3F00BCF483 /* OpenLibraryAPI.swift in Sources */,
+				110D13F2229A616E00BCF483 /* DocCoreDataSingleton.swift in Sources */,
 				110D13E62298BCB200BCF483 /* openlibrarycd.xcdatamodeld in Sources */,
-				110D13D322974DD400BCF483 /* SearchItemVM.swift in Sources */,
-				110D13C12295D5A200BCF483 /* SearchItemTableViewCell.swift in Sources */,
-				110D13D122971AE400BCF483 /* SearchItem.swift in Sources */,
+				110D13D322974DD400BCF483 /* DocItemVM.swift in Sources */,
+				110D13C12295D5A200BCF483 /* DocItemTableViewCell.swift in Sources */,
+				110D13D122971AE400BCF483 /* DocItem.swift in Sources */,
 				110D13CA229701E900BCF483 /* SearchResult.swift in Sources */,
 				110A7A752295C26C001C16A0 /* WishListViewController.swift in Sources */,
+				110D13E92299A9BE00BCF483 /* CoreDataHandler.swift in Sources */,
 				110D13CF229714B400BCF483 /* UIViewController.swift in Sources */,
 				110A7A712295C26C001C16A0 /* AppDelegate.swift in Sources */,
 				110A7A732295C26C001C16A0 /* SearchViewController.swift in Sources */,
+				110D13F0229A4C2F00BCF483 /* CoreDataVM.swift in Sources */,
 				110D13C32295D77900BCF483 /* DoneKeyboardTextField.swift in Sources */,
 				110D13CC2297020900BCF483 /* SearchResultVM.swift in Sources */,
 				110D13C52295D81300BCF483 /* PickerTextField.swift in Sources */,

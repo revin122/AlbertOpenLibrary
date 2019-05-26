@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Nuke
 
-class SearchViewController: UIViewController, DoneKeyboardDelegate, PickerTextFieldDelegate, SearchResultVMDelegate, UITableViewDataSource, UITableViewDelegate, SearchItemTableViewCellDelegate {
+class SearchViewController: UIViewController, DoneKeyboardDelegate, PickerTextFieldDelegate, SearchResultVMDelegate, UITableViewDataSource, UITableViewDelegate, DocItemTableViewCellDelegate {
     
     private let MIN_CHAR_COUNT = 3
     
@@ -27,14 +26,18 @@ class SearchViewController: UIViewController, DoneKeyboardDelegate, PickerTextFi
         // Do any additional setup after loading the view, typically from a nib.
         
         searchTextField.doneKeyboardDelegate = self
+        
+        typeTextField.options = searchResultVM.typeOptions
         typeTextField.pickerDelegate = self
+        
         searchResultVM.delegate = self
         
         tableView.dataSource = self
         tableView.delegate = self
     
+        tableView.register(UINib(nibName: "DocItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: DocItemTableViewCell.identifier)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = SearchItemTableViewCell.estimatedRowHeight
+        tableView.estimatedRowHeight = DocItemTableViewCell.estimatedRowHeight
     }
 
     func startSearch(showError : Bool) {
@@ -57,27 +60,13 @@ class SearchViewController: UIViewController, DoneKeyboardDelegate, PickerTextFi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let searchItemTableViewCell : SearchItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: SearchItemTableViewCell.identifier, for: indexPath) as! SearchItemTableViewCell
+        let docItemTableViewCell : DocItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: DocItemTableViewCell.identifier, for: indexPath) as! DocItemTableViewCell
         
-        let searchItemVM = searchResultVM.getItem(index: indexPath.row)
+        let docItemVM = searchResultVM.getItem(index: indexPath.row)
         
-        //show the things we want to display
-        searchItemTableViewCell.delegate = self
-        searchItemTableViewCell.titleLabel.text = searchItemVM.title
-        searchItemTableViewCell.subtitleLabel.text = searchItemVM.subtitle
+        docItemTableViewCell.setupView(docItemVM: docItemVM, tag: indexPath.row, delegate: self)
         
-        //store the index in the tag so that we can easily retrieve it
-        searchItemTableViewCell.tag = indexPath.row
-        
-        //show image using Nuke (image loading and caching system)
-        //TODO do a check if image is empty
-        Nuke.loadImage(with: searchItemVM.getCoverImageURLString(size: .small),
-                       options: ImageLoadingOptions(placeholder: UIImage(named: "tempbooksm"),
-                                                    transition: .fadeIn(duration: 0.25),
-                                                    failureImage: UIImage(named: "tempbooksm")),
-                       into: searchItemTableViewCell.coverImageView)
-        
-        return searchItemTableViewCell
+        return docItemTableViewCell
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -94,14 +83,14 @@ class SearchViewController: UIViewController, DoneKeyboardDelegate, PickerTextFi
     //End of TableView Delegate/Datasource
     
     /*****
-     SearchItemTableViewCellDelegate Delegate
+     DocItemTableViewCell Delegate
      ****/
     
     func wishListButtonClicked(index: Int) {
-        
+        searchResultVM.processToCoreData(docIndex: index)
     }
     
-    //End of SearchItemTableViewCell Delegate
+    //End of DocItemTableViewCell Delegate
     
     /*****
      SearchResultVM Delegate
@@ -111,8 +100,8 @@ class SearchViewController: UIViewController, DoneKeyboardDelegate, PickerTextFi
         tableView.reloadData()
     }
     
-    func errorFound() {
-        self.showMessage(message: searchResultVM.errorMessage ?? "")
+    func generatedMessage() {
+        self.showMessage(message: searchResultVM.showMessage ?? "")
     }
     
     //End of SearchResultVM Delegate

@@ -63,7 +63,12 @@ class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let pickerLabel = view as? UILabel
+        var pickerLabel = view as? UILabel
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont(name: "Helvetica", size: 16)
+            pickerLabel?.textAlignment = NSTextAlignment.center
+        }
         pickerLabel?.text = options[row]
         return pickerLabel!
     }

@@ -13,15 +13,15 @@ class SearchResult {
 
     let start : Int
     let numFound : Int
-    var results : [SearchItem]
+    var results : [DocItem]
     
     init(json : JSON) {
         start = json["start"].intValue
         numFound = json["numFound"].intValue
-        results = json["docs"].arrayValue.map { SearchItem(json: $0) }
+        results = json["docs"].arrayValue.map { DocItem(json: $0) }
     }
     
-    func addPreviousEntries(previousResults : [SearchItem]) {
+    func addPreviousEntries(previousResults : [DocItem]) {
         results.insert(contentsOf: previousResults, at: 0)
     }
     

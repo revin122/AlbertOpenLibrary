@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="docItem" rowHeight="102" id="OO0-A7-xuX" customClass="DocItemTableViewCell" customModule="OpenLibrary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="102"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OO0-A7-xuX" id="tuL-sZ-w7N">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="101.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="260" image="tempbooksm" translatesAutoresizingMaskIntoConstraints="NO" id="38H-pr-TZQ">
+                        <rect key="frame" x="16" y="16" width="60" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="g3r-nW-PX6"/>
+                            <constraint firstAttribute="width" constant="60" id="va0-nh-s1N"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="245" verticalHuggingPriority="253" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="haG-wf-nSa">
+                        <rect key="frame" x="84" y="19" width="251" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="249" verticalHuggingPriority="254" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4U-WW-qf5">
+                        <rect key="frame" x="84" y="47" width="251" height="16.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahv-8y-fd1">
+                        <rect key="frame" x="86" y="67.5" width="247" height="30"/>
+                        <state key="normal" title="Add to Wish List"/>
+                        <connections>
+                            <action selector="wishListButtonClicked:" destination="OO0-A7-xuX" eventType="touchUpInside" id="D09-aO-4Wv"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="haG-wf-nSa" firstAttribute="top" secondItem="tuL-sZ-w7N" secondAttribute="topMargin" constant="8" id="53L-ok-1Xt"/>
+                    <constraint firstAttribute="trailing" secondItem="haG-wf-nSa" secondAttribute="trailing" constant="8" id="C0I-a2-Bi0"/>
+                    <constraint firstAttribute="bottom" secondItem="Ahv-8y-fd1" secondAttribute="bottom" constant="4" id="GF1-A7-2Ua"/>
+                    <constraint firstItem="haG-wf-nSa" firstAttribute="leading" secondItem="38H-pr-TZQ" secondAttribute="trailing" constant="8" id="JI7-f3-YdU"/>
+                    <constraint firstItem="m4U-WW-qf5" firstAttribute="leading" secondItem="haG-wf-nSa" secondAttribute="leading" id="L0V-NH-e99"/>
+                    <constraint firstAttribute="trailing" secondItem="Ahv-8y-fd1" secondAttribute="trailing" constant="10" id="O7z-1D-eXQ"/>
+                    <constraint firstItem="Ahv-8y-fd1" firstAttribute="top" secondItem="m4U-WW-qf5" secondAttribute="bottom" constant="4" id="TW9-BT-Kd8"/>
+                    <constraint firstItem="m4U-WW-qf5" firstAttribute="top" secondItem="haG-wf-nSa" secondAttribute="bottom" constant="8" id="U4H-Pw-lG1"/>
+                    <constraint firstItem="m4U-WW-qf5" firstAttribute="trailing" secondItem="haG-wf-nSa" secondAttribute="trailing" id="XDW-tJ-kWo"/>
+                    <constraint firstItem="38H-pr-TZQ" firstAttribute="leading" secondItem="tuL-sZ-w7N" secondAttribute="leadingMargin" id="lRJ-Mv-xnx"/>
+                    <constraint firstItem="38H-pr-TZQ" firstAttribute="centerY" secondItem="tuL-sZ-w7N" secondAttribute="centerY" id="rk1-d0-Reg"/>
+                    <constraint firstItem="Ahv-8y-fd1" firstAttribute="leading" secondItem="38H-pr-TZQ" secondAttribute="trailing" constant="10" id="vEy-7C-c1C"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="coverImageView" destination="38H-pr-TZQ" id="BXH-CC-BU4"/>
+                <outlet property="subtitleLabel" destination="m4U-WW-qf5" id="ZlN-Kh-mDZ"/>
+                <outlet property="titleLabel" destination="haG-wf-nSa" id="s4s-70-fXg"/>
+                <outlet property="wishListButton" destination="Ahv-8y-fd1" id="Dpn-LD-umT"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tempbooksm" width="60" height="36.720001220703125"/>
+    </resources>
+</document>

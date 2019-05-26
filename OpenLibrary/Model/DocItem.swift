@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class SearchItem {
+class DocItem {
 
     let isbn : [String]
     let authorName : [String]
@@ -55,6 +55,21 @@ class SearchItem {
         lccn = json["lccn"].arrayValue.map { $0.stringValue }
     }
     
-    
+    init(isbn : [String], authorName : [String], goodReadsID : [String], amazonID : [String], authorKey : [String], coverEditionKey : String, title : String, publishYear : [Int], firstPublishYear : Int, key : String, publisher : [String], lccn : [String]) {
+        
+        self.isbn = isbn
+        self.authorName = authorName
+        self.goodReadsID = goodReadsID
+        self.amazonID = amazonID
+        self.authorKey = authorKey
+        self.coverEditionKey = coverEditionKey
+        self.title = title
+        self.publishYear = publishYear
+        self.firstPublishYear = firstPublishYear
+        self.key = key
+        self.publisher = publisher
+        self.lccn = lccn
+        
+    }
     
 }
