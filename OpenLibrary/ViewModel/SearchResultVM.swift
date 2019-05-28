@@ -17,6 +17,7 @@ class SearchResultVM : SearchAPIDelegate {
     
     var currentSearchText : String = ""
     var currentSearchType : String = ""
+    var selectedItem : DocItemVM = DocItemVM()
     
     private var searchResult : SearchResult? {
         didSet {

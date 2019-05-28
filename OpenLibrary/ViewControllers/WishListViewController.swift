@@ -30,6 +30,15 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         coreDataVM.update()
         tableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ?? "" ==  DetailViewController.segueIdentifier {
+            
+            if let detailViewController = segue.destination as? DetailViewController {
+                detailViewController.docItemVM = coreDataVM.selectedItem
+            }
+        }
+    }
 
     /*****
      TableView Delegate/Datasource
@@ -51,6 +60,11 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coreDataVM.selectedItem = coreDataVM.docItemsVM[indexPath.row]
+        performSegue(withIdentifier: DetailViewController.segueIdentifier, sender: nil)
     }
     
     //End of TableView Delegate/Datasource

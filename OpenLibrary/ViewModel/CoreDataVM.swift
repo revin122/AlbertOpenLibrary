@@ -11,6 +11,7 @@ import UIKit
 class CoreDataVM {
 
     var docItemsVM : [DocItemVM]
+    var selectedItem : DocItemVM = DocItemVM()
     
     //no need for delegates since we dont have an API call
     var generatedMessage : String

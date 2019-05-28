@@ -51,6 +51,15 @@ class SearchViewController: UIViewController, DoneKeyboardDelegate, PickerTextFi
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ?? "" ==  DetailViewController.segueIdentifier {
+            
+            if let detailViewController = segue.destination as? DetailViewController {
+                detailViewController.docItemVM = searchResultVM.selectedItem
+            }
+        }
+    }
+    
     /*****
      TableView Delegate/Datasource
      ****/
@@ -79,6 +88,12 @@ class SearchViewController: UIViewController, DoneKeyboardDelegate, PickerTextFi
             searchResultVM.goToNextPage()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchResultVM.selectedItem = searchResultVM.getItem(index: indexPath.row)
+        performSegue(withIdentifier: DetailViewController.segueIdentifier, sender: nil)
+    }
+    
     
     //End of TableView Delegate/Datasource
     

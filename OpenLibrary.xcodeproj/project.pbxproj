@@ -27,6 +27,10 @@
 		110D13EE229A318700BCF483 /* DocItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110D13EC229A318600BCF483 /* DocItemTableViewCell.xib */; };
 		110D13F0229A4C2F00BCF483 /* CoreDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13EF229A4C2F00BCF483 /* CoreDataVM.swift */; };
 		110D13F2229A616E00BCF483 /* DocCoreDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13F1229A616E00BCF483 /* DocCoreDataSingleton.swift */; };
+		110D13F4229B3AC700BCF483 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13F3229B3AC700BCF483 /* DetailViewController.swift */; };
+		110D13F6229B5DDE00BCF483 /* DetailMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13F5229B5DDE00BCF483 /* DetailMainTableViewCell.swift */; };
+		110D13F8229B5DF100BCF483 /* DetailSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13F7229B5DF100BCF483 /* DetailSubTableViewCell.swift */; };
+		110D13FA229C532200BCF483 /* DetailsItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D13F9229C532200BCF483 /* DetailsItemVM.swift */; };
 		4E8EFD06D3CD7F4680401F2E /* Pods_OpenLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8932BCF854E22E2C058F01 /* Pods_OpenLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,10 @@
 		110D13EC229A318600BCF483 /* DocItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocItemTableViewCell.xib; sourceTree = "<group>"; };
 		110D13EF229A4C2F00BCF483 /* CoreDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataVM.swift; sourceTree = "<group>"; };
 		110D13F1229A616E00BCF483 /* DocCoreDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocCoreDataSingleton.swift; sourceTree = "<group>"; };
+		110D13F3229B3AC700BCF483 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		110D13F5229B5DDE00BCF483 /* DetailMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMainTableViewCell.swift; sourceTree = "<group>"; };
+		110D13F7229B5DF100BCF483 /* DetailSubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubTableViewCell.swift; sourceTree = "<group>"; };
+		110D13F9229C532200BCF483 /* DetailsItemVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsItemVM.swift; sourceTree = "<group>"; };
 		2C8932BCF854E22E2C058F01 /* Pods_OpenLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B53158EF82B33E7FEA93E3 /* Pods-OpenLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLibrary.release.xcconfig"; path = "Target Support Files/Pods-OpenLibrary/Pods-OpenLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		FA11CBA25D1CC574E2BA8E07 /* Pods-OpenLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLibrary.debug.xcconfig"; path = "Target Support Files/Pods-OpenLibrary/Pods-OpenLibrary.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 			children = (
 				110A7A722295C26C001C16A0 /* SearchViewController.swift */,
 				110A7A742295C26C001C16A0 /* WishListViewController.swift */,
+				110D13F3229B3AC700BCF483 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -130,6 +139,7 @@
 				110D13CB2297020900BCF483 /* SearchResultVM.swift */,
 				110D13D222974DD300BCF483 /* DocItemVM.swift */,
 				110D13EF229A4C2F00BCF483 /* CoreDataVM.swift */,
+				110D13F9229C532200BCF483 /* DetailsItemVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -149,6 +159,8 @@
 				110D13C02295D5A200BCF483 /* DocItemTableViewCell.swift */,
 				110D13C22295D77900BCF483 /* DoneKeyboardTextField.swift */,
 				110D13C42295D81300BCF483 /* PickerTextField.swift */,
+				110D13F5229B5DDE00BCF483 /* DetailMainTableViewCell.swift */,
+				110D13F7229B5DF100BCF483 /* DetailSubTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,7 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110D13F8229B5DF100BCF483 /* DetailSubTableViewCell.swift in Sources */,
 				110D13C72295DD3F00BCF483 /* OpenLibraryAPI.swift in Sources */,
+				110D13F4229B3AC700BCF483 /* DetailViewController.swift in Sources */,
 				110D13F2229A616E00BCF483 /* DocCoreDataSingleton.swift in Sources */,
 				110D13E62298BCB200BCF483 /* openlibrarycd.xcdatamodeld in Sources */,
 				110D13D322974DD400BCF483 /* DocItemVM.swift in Sources */,
@@ -329,10 +343,12 @@
 				110D13D122971AE400BCF483 /* DocItem.swift in Sources */,
 				110D13CA229701E900BCF483 /* SearchResult.swift in Sources */,
 				110A7A752295C26C001C16A0 /* WishListViewController.swift in Sources */,
+				110D13FA229C532200BCF483 /* DetailsItemVM.swift in Sources */,
 				110D13E92299A9BE00BCF483 /* CoreDataHandler.swift in Sources */,
 				110D13CF229714B400BCF483 /* UIViewController.swift in Sources */,
 				110A7A712295C26C001C16A0 /* AppDelegate.swift in Sources */,
 				110A7A732295C26C001C16A0 /* SearchViewController.swift in Sources */,
+				110D13F6229B5DDE00BCF483 /* DetailMainTableViewCell.swift in Sources */,
 				110D13F0229A4C2F00BCF483 /* CoreDataVM.swift in Sources */,
 				110D13C32295D77900BCF483 /* DoneKeyboardTextField.swift in Sources */,
 				110D13CC2297020900BCF483 /* SearchResultVM.swift in Sources */,
